@@ -3,15 +3,20 @@ package com.itauCodeChallenge.itauCodeChallenge.business.services;
 import com.itauCodeChallenge.itauCodeChallenge.controller.dtos.EstatisticasResponseDTO;
 import com.itauCodeChallenge.itauCodeChallenge.controller.dtos.TransacaoRequestDTO;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.DoubleSummaryStatistics;
 import java.util.List;
 
+
+
 @Service
-@RequiredArgsConstructor
 public class EstatisticasService {
-    public final TrasacaoService trasacaoService;
+
+    @Autowired
+    public TrasacaoService trasacaoService;
 
 
     public EstatisticasResponseDTO calcularEstatisticasTransacoes(Integer intervaloBusca){
